@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang - Terjemahan Bakumpai - Indonesia - Ngaju</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset dan Pengaturan Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.4));
+            color: #495057;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Mode Gelap */
+        body.dark-mode {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        /* Header dengan Gambar Profil */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            background-image: url('path/to/dayak-pattern.png'); /* Gunakan gambar motif khas Dayak */
+            background-size: cover;
+            color: #fff;
+            border-radius: 15px;
+            margin: 1rem;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        header .profile-img {
+            width: 120px; /* Ukuran gambar profil */
+            height: 120px;
+            border-radius: 50%;
+            background-image: url('Gambar1.jpeg'); /* Ganti dengan gambar profil */
+            background-size: cover;
+            background-position: center;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .profile-info h3 {
+            font-size: 1.5rem; /* Sesuaikan ukuran font */
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem; /* Spasi antar elemen */
+        }
+
+        .profile-info p {
+            font-size: 1rem;
+            color: #ddd;
+            line-height: 1.4;
+            margin: 0;
+            text-align: center; /* Justify text to match other content */
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Tombol Aksi */
+        button, .action-icon {
+            border: none;
+            padding: 0.5rem;
+            font-size: 1.3rem;
+            background-color: #b71c1c; /* Warna merah khas Dayak */
+            color: #fff;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 5px 5px 20px rgba(183, 28, 28, 0.5), -5px -5px 20px rgba(255, 235, 59, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode button, body.dark-mode .action-icon {
+            background-color: #495057;
+            color: #f8f9fa;
+            box-shadow: 5px 5px 20px rgba(255, 235, 59, 0.3), -5px -5px 20px rgba(183, 28, 28, 0.3);
+        }
+
+        button:hover, .action-icon:hover {
+            transform: scale(1.1);
+            background-color: #218838;
+        }
+
+        /* Konten Utama */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .about-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 650px;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        body.dark-mode .about-box {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        .about-box h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #b71c1c;
+        }
+
+        .about-box p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+        }
+
+        body.dark-mode .about-box p {
+            color: #ecf0f1;
+        }
+
+        /* Footer dengan Motif Dayak */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-image: url('path/to/dayak-pattern.png'); /* Latar belakang motif Dayak */
+            color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 1rem;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menambahkan Audio dengan autoplay -->
+    <audio autoplay loop>
+        <source src="music.dayak.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <header>
+        <div class="profile-img"></div>
+        <div class="profile-info">
+            <h3>INDRA</h3>
+            <p>MUARA TEWEH. KABUPATEN BARITO UTARA</p>
+        </div>
+        <div class="actions">
+            <span class="action-icon" id="dark-mode-toggle" title="Ganti Mode Gelap/Terang">🌙</span>
+            <span class="action-icon" id="next-page" title="Ke Halaman Selanjutnya" onclick="goToNextPage()">🔙</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-box">
+            <h2>Tentang Website Ini</h2>
+            <p>Website Terjemahan Bakumpai - Indonesia - Ngaju bertujuan untuk memudahkan pengguna dalam menerjemahkan kata-kata antara bahasa Indonesia, Bakumpai, dan Ngaju. Dengan berbagai pasangan bahasa yang tersedia, pengguna dapat memilih untuk menerjemahkan kata dari bahasa Indonesia ke Bakumpai, Bakumpai ke Ngaju, dan sebaliknya.</p>
+            <p>Website ini dibangun dengan teknologi web modern dan memiliki desain yang responsif, sehingga dapat diakses dengan mudah di perangkat desktop maupun mobile. Desain yang digunakan mengusung tema budaya Dayak yang kaya akan motif dan warna yang mencerminkan kekayaan budaya lokal.</p>
+            <p>Fitur utama website ini termasuk pemilihan bahasa, area input untuk mengetikkan kata yang akan diterjemahkan, dan area output yang akan menampilkan hasil terjemahan. Selain itu, pengguna juga dapat menyalin hasil terjemahan ke clipboard dengan mudah menggunakan tombol salin yang tersedia.</p>
+            <p>Website ini adalah bagian dari upaya untuk memelihara dan mengembangkan bahasa daerah, sekaligus memberikan akses yang lebih luas terhadap penerjemahan antar bahasa daerah di Indonesia.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Terjemahan Bakumpai - Indonesia - Ngaju</p>
+    </footer>
+
+    <script>
+        document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        function goToNextPage() {
+            window.location.href = "home.html";  // Ganti ke halaman utama
+        }
+    </script>
+</body>
+</html>

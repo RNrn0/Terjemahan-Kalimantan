@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang - Terjemahan Bakumpai - Indonesia - Ngaju</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset dan Pengaturan Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        html, body {
+            height: 100%; /* Memastikan tinggi halaman penuh */
+            font-family: 'Roboto', sans-serif;
+            background-color: white; /* Latar belakang putih */
+            color: #495057;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Mode Gelap */
+        body.dark-mode {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        /* Animasi Intro */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #b71c1c; /* Warna khas Dayak */
+            margin-top: 20px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Animasi Tombol Masuk */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .masuk-btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #b71c1c; /* Warna khas Dayak */
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0px 4px 10px rgba(183, 28, 28, 0.5), -5px -5px 20px rgba(255, 235, 59, 0.3);
+            animation: bounceIn 1s ease-out;
+        }
+
+        .masuk-btn:hover {
+            transform: scale(1.05);
+            background-color: #8e1a1a; /* Efek hover */
+            box-shadow: 0px 6px 15px rgba(183, 28, 28, 0.7), -5px -5px 25px rgba(255, 235, 59, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem;
+            background-color: #34495e;
+            color: #ecf0f1;
+            text-align: center;
+            font-size: 0.9rem;
+            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Musik -->
+    <audio id="background-music" autoplay loop>
+        <source src="music.dayak.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <div class="intro-text">
+        <p>Selamat datang di Terjemahan Kalimantan</p>
+    </div>
+
+    <!-- Tombol Masuk -->
+    <button class="masuk-btn" onclick="window.location.href='home.html'">Masuk</button>
+
+    <footer>
+        <p>&copy; 2024 Terjemahan Bakumpai - Indonesia - Ngaju</p>
+    </footer>
+
+    <script>
+        // Memutar musik otomatis jika autoplay diblokir
+        window.onload = function() {
+            var audio = document.getElementById("background-music");
+            audio.play().catch(function(error) {
+                // Jika autoplay diblokir, musik akan diputar setelah interaksi pengguna
+                document.body.addEventListener('click', function() {
+                    audio.play();
+                });
+            });
+        };
+    </script>
+</body>
+</html>

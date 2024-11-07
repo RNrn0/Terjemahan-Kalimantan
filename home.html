@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terjemahan Bakumpai - Indonesia - Ngaju</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset dan Pengaturan Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.4));
+            color: #495057;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Mode Gelap */
+        body.dark-mode {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        /* Header dengan Motif Dayak */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-image: url('path/to/dayak-pattern.png'); /* Gunakan gambar motif khas Dayak */
+            background-size: cover;
+            color: #fff;
+            border-radius: 15px;
+            margin: 1rem;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Tombol Aksi */
+        button, .action-icon {
+            border: none;
+            padding: 0.5rem;
+            font-size: 1.3rem;
+            background-color: #b71c1c; /* Warna merah khas Dayak */
+            color: #fff;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 5px 5px 20px rgba(183, 28, 28, 0.5), -5px -5px 20px rgba(255, 235, 59, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode button, body.dark-mode .action-icon {
+            background-color: #495057;
+            color: #f8f9fa;
+            box-shadow: 5px 5px 20px rgba(255, 235, 59, 0.3), -5px -5px 20px rgba(183, 28, 28, 0.3);
+        }
+
+        button:hover, .action-icon:hover {
+            transform: scale(1.1);
+            background-color: #218838;
+        }
+
+        /* Konten Utama */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .translation-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 650px;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        body.dark-mode .translation-box {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        .translation-box select,
+        .translation-box textarea {
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 1rem;
+            background: linear-gradient(45deg, #d32f2f, #fbc02d); /* Warna dengan gradasi khas Dayak */
+            color: #34495e;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px rgba(255, 255, 255, 0.4);
+        }
+
+        body.dark-mode .translation-box select,
+        body.dark-mode .translation-box textarea {
+            background: linear-gradient(45deg, #7b1fa2, #8e24aa); /* Gradasi untuk mode gelap */
+            color: #ecf0f1;
+        }
+
+        .translation-box textarea::placeholder {
+            color: #7f8c8d;
+        }
+
+        /* Tombol Salin */
+        .copy-button {
+            font-size: 1.5rem;
+            background-color: transparent;
+            color: #495057;
+            padding: 0.75rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .copy-button:hover {
+            color: #007bff;
+        }
+
+        /* Pesan Notifikasi */
+        .copy-notification {
+            position: absolute;
+            top: -2rem;
+            right: 0;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .show-notification {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Footer dengan Motif Dayak */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-image: url('path/to/dayak-pattern.png'); /* Latar belakang motif Dayak */
+            color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 1rem;
+            border-radius: 15px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode footer {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Terjemahan Bakumpai - Indonesia - Ngaju</h1>
+        <div class="actions">
+            <span class="action-icon" id="dark-mode-toggle" title="Ganti Mode Gelap/Terang">🌙</span>
+            <span class="action-icon" id="next-page" title="Ke Halaman Selanjutnya" onclick="goToNextPage()">📚</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="translation-box">
+            <select id="language-select">
+                <option value="id-to-bakumpai">Indonesia ke Bakumpai</option>
+                <option value="bakumpai-to-id">Bakumpai ke Indonesia</option>
+                <option value="id-to-ngaju">Indonesia ke Ngaju</option>
+                <option value="ngaju-to-id">Ngaju ke Indonesia</option>
+                <option value="bakumpai-to-ngaju">Bakumpai ke Ngaju</option>
+                <option value="ngaju-to-bakumpai">Ngaju ke Bakumpai</option>
+            </select>
+            <textarea id="input-text" placeholder="Masukkan teks untuk diterjemahkan..." oninput="autoTranslate()"></textarea>
+            <textarea id="output-text" readonly placeholder="Hasil terjemahan akan muncul di sini..."></textarea>
+            <button class="copy-button" onclick="copyToClipboard()">
+                <i class="fas fa-copy"></i>
+            </button>
+            <div class="copy-notification" id="copy-notification">Teks disalin!</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Terjemahan Bakumpai - Indonesia - Ngaju</p>
+    </footer>
+
+  <script>
+    const translations = {
+        "kamu": { "bakumpai": "ikau", "ngaju": "ikau" },
+        "awal": { "bakumpai": "awal", "ngaju": "awal" },
+        "nama": { "bakumpai": "aran", "ngaju": "aran" },
+        "gantung": { "bakumpai": "ampah", "ngaju": "ampeh" },
+        "ayah": { "bakumpai": "apa", "ngaju": "apang" },
+        "lihat": { "bakumpai": "alang", "ngaju": "lang" },
+        "pelampung": { "bakumpai": "andung", "ngaju": "andeng" },
+        "muncul": { "bakumpai": "timbul", "ngaju": "tampul" },
+        "muka": { "bakumpai": "bau", "ngaju": "bai" },
+        "kira": { "bakumpai": "asai", "ngaju": "akar" },
+        "hari": { "bakumpai": "andau", "ngaju": "andao" },
+        "anjing": { "bakumpai": "asu", "ngaju": "asu" },
+        "mereka": { "bakumpai": "awen", "ngaju": "awen" },
+        "siapa": { "bakumpai": "aweh", "ngaju": "aweh" },
+        "hati": { "bakumpai": "atei", "ngaju": "hatei" },
+        "asap": { "bakumpai": "ansep", "ngaju": "asep" },
+        "api": { "bakumpai": "apui", "ngaju": "api" },
+        "kata": { "bakumpai": "auh", "ngaju": "kata" },
+        "kalau": { "bakumpai": "amun", "ngaju": "kalau" },
+        "atau": { "bakumpai": "mun", "ngaju": "atau" },
+        "karena": { "bakumpai": "awi", "ngaju": "karena" },
+        "untuk": { "bakumpai": "akam", "ngaju": "untuk" },
+        "adik": { "bakumpai": "ading", "ngaju": "adik" },
+        "iring-iringan": { "bakumpai": "arak", "ngaju": "iring-iringan" },
+        "kepunyaan": { "bakumpai": "ayum", "ngaju": "kepunyaan" },
+        "paman": { "bakumpai": "amang", "ngaju": "paman" },
+        "keponakan": { "bakumpai": "aken", "ngaju": "keponakan" },
+        "tampang": { "bakumpai": "ampin", "ngaju": "tampang" },
+        "tikar": { "bakumpai": "amak", "ngaju": "tikar" },
+        "mari": { "bakumpai": "ayu", "ngaju": "mari" },
+        "untuk": { "bakumpai": "akan", "ngaju": "untuk" },
+        "banyak": { "bakumpai": "are", "ngaju": "banyak" },
+        "katanya": { "bakumpai": "auheh", "ngaju": "katanya" },
+        "awan": { "bakumpai": "awan", "ngaju": "awan" },
+        "perempuan": { "bakumpai": "bawi", "ngaju": "perempuan" },
+        "kera": { "bakumpai": "bakei", "ngaju": "kera" },
+        "berani": { "bakumpai": "bahanyi", "ngaju": "berani" },
+        "bisa": { "bakumpai": "tau", "ngaju": "bisa" },
+        "bisa": { "bakumpai": "wisa", "ngaju": "bisa" },
+        "bersih": { "bakumpai": "balawa", "ngaju": "bersih" },
+        "ikat": { "bakumpai": "bahat", "ngaju": "ikat" },
+        "kembali": { "bakumpai": "buli", "ngaju": "kembali" },
+        "betul": { "bakumpai": "bujur", "ngaju": "betul" },
+        "balas": { "bakumpai": "baleh", "ngaju": "balas" },
+        "tua": { "bakumpai": "bakas", "ngaju": "tua" },
+        "bibir": { "bakumpai": "biwih", "ngaju": "bibir" },
+        "betis": { "bakumpai": "buntis", "ngaju": "betis" },
+        "buah": { "bakumpai": "bua", "ngaju": "buah" },
+        "buaya": { "bakumpai": "buai", "ngaju": "buaya" },
+        "rusak": { "bakumpai": "bijat", "ngaju": "rusak" },
+        "rajin": { "bakumpai": "bukih", "ngaju": "rajin" }
+        };
+
+        document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        function autoTranslate() {
+            const text = document.getElementById('input-text').value.trim().toLowerCase();
+            const language = document.getElementById('language-select').value;
+            const outputText = document.getElementById('output-text');
+
+            let translation = "Tidak ditemukan terjemahan.";
+            
+            if (language === "id-to-bakumpai" && translations[text]) {
+                translation = translations[text].bakumpai;
+            } else if (language === "id-to-ngaju" && translations[text]) {
+                translation = translations[text].ngaju;
+            } else if (language === "bakumpai-to-id") {
+                translation = Object.keys(translations).find(key => translations[key].bakumpai === text) || "Tidak ditemukan terjemahan.";
+            } else if (language === "ngaju-to-id") {
+                translation = Object.keys(translations).find(key => translations[key].ngaju === text) || "Tidak ditemukan terjemahan.";
+            } else if (language === "bakumpai-to-ngaju") {
+                const indonesianWord = Object.keys(translations).find(key => translations[key].bakumpai === text);
+                translation = indonesianWord ? translations[indonesianWord].ngaju : "Tidak ditemukan terjemahan.";
+            } else if (language === "ngaju-to-bakumpai") {
+                const indonesianWord = Object.keys(translations).find(key => translations[key].ngaju === text);
+                translation = indonesianWord ? translations[indonesianWord].bakumpai : "Tidak ditemukan terjemahan.";
+            }
+
+            outputText.value = translation;
+        }
+
+        function copyToClipboard() {
+            const outputText = document.getElementById('output-text');
+            outputText.select();
+            document.execCommand('copy');
+
+            const notification = document.getElementById('copy-notification');
+            notification.classList.add('show-notification');
+            setTimeout(() => {
+                notification.classList.remove('show-notification');
+            }, 2000);
+        }
+
+        function goToNextPage() {
+            window.location.href = "Tentang.html";
+        }
+    </script>
+</body>
+</html>
