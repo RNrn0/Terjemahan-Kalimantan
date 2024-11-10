@@ -1,4 +1,4 @@
-ni<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -30,14 +30,13 @@ ni<!DOCTYPE html>
             color: #ecf0f1;
         }
 
-        /* Header dengan Motif Dayak */
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            background-image: url('path/to/dayak-pattern.png'); /* Gunakan gambar motif khas Dayak */
-            background-size: cover;
+            background-color: rgba(63, 81, 181, 0.85);
             color: #fff;
             border-radius: 15px;
             margin: 1rem;
@@ -62,7 +61,7 @@ ni<!DOCTYPE html>
             border: none;
             padding: 0.5rem;
             font-size: 1.3rem;
-            background-color: #b71c1c; /* Warna merah khas Dayak */
+            background-color: #28a745;
             color: #fff;
             border-radius: 50%;
             width: 45px;
@@ -71,14 +70,14 @@ ni<!DOCTYPE html>
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 5px 5px 20px rgba(183, 28, 28, 0.5), -5px -5px 20px rgba(255, 235, 59, 0.3);
+            box-shadow: 5px 5px 20px rgba(0, 255, 0, 0.3), -5px -5px 20px rgba(255, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
 
         body.dark-mode button, body.dark-mode .action-icon {
             background-color: #495057;
             color: #f8f9fa;
-            box-shadow: 5px 5px 20px rgba(255, 235, 59, 0.3), -5px -5px 20px rgba(183, 28, 28, 0.3);
+            box-shadow: 5px 5px 20px rgba(255, 255, 0, 0.3), -5px -5px 20px rgba(0, 0, 255, 0.3);
         }
 
         button:hover, .action-icon:hover {
@@ -105,7 +104,6 @@ ni<!DOCTYPE html>
             background-color: #ffffff;
             border-radius: 20px;
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
         body.dark-mode .translation-box {
@@ -119,15 +117,13 @@ ni<!DOCTYPE html>
             font-size: 1.1rem;
             border: none;
             border-radius: 1rem;
-            background: linear-gradient(45deg, #d32f2f, #fbc02d); /* Warna dengan gradasi khas Dayak */
+            background: linear-gradient(45deg, #f39c12, #f1c40f);
             color: #34495e;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px rgba(255, 255, 255, 0.4);
         }
 
         body.dark-mode .translation-box select,
         body.dark-mode .translation-box textarea {
-            background: linear-gradient(45deg, #7b1fa2, #8e24aa); /* Gradasi untuk mode gelap */
+            background: linear-gradient(45deg, #16a085, #1abc9c);
             color: #ecf0f1;
         }
 
@@ -144,43 +140,21 @@ ni<!DOCTYPE html>
             border-radius: 50%;
             cursor: pointer;
             transition: color 0.3s ease;
-            position: relative;
         }
 
         .copy-button:hover {
             color: #007bff;
         }
 
-        /* Pesan Notifikasi */
-        .copy-notification {
-            position: absolute;
-            top: -2rem;
-            right: 0;
-            padding: 0.5rem 1rem;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .show-notification {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Footer dengan Motif Dayak */
+        /* Footer */
         footer {
             text-align: center;
             padding: 1rem;
-            background-image: url('path/to/dayak-pattern.png'); /* Latar belakang motif Dayak */
+            background-color: #2c3e50;
             color: #fff;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             margin: 1rem;
             border-radius: 15px;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         body.dark-mode footer {
@@ -205,15 +179,12 @@ ni<!DOCTYPE html>
                 <option value="bakumpai-to-id">Bakumpai ke Indonesia</option>
                 <option value="id-to-ngaju">Indonesia ke Ngaju</option>
                 <option value="ngaju-to-id">Ngaju ke Indonesia</option>
-                <option value="bakumpai-to-ngaju">Bakumpai ke Ngaju</option>
-                <option value="ngaju-to-bakumpai">Ngaju ke Bakumpai</option>
             </select>
             <textarea id="input-text" placeholder="Masukkan teks untuk diterjemahkan..." oninput="autoTranslate()"></textarea>
             <textarea id="output-text" readonly placeholder="Hasil terjemahan akan muncul di sini..."></textarea>
             <button class="copy-button" onclick="copyToClipboard()">
                 <i class="fas fa-copy"></i>
             </button>
-            <div class="copy-notification" id="copy-notification">Teks disalin!</div>
         </section>
     </main>
 
@@ -221,7 +192,7 @@ ni<!DOCTYPE html>
         <p>&copy; 2024 Terjemahan Bakumpai - Indonesia - Ngaju</p>
     </footer>
 
-  <script>
+<script>
     const translations = {
       "kamu": { "bakumpai": "ikau", "ngaju": "ikau" },
       "kenapa": { "bakumpai": "buhen", "ngaju": "behen" },
@@ -251,13 +222,13 @@ ni<!DOCTYPE html>
       "putih": { "bakumpai": "baputi", "ngaju": "baputi" },
       "berpikir": { "bakumpai": "bapikir", "ngaju": "bapikir" },
       "tipis": { "bakumpai": "banipis", "ngaju": "banipis" },
-      "suami": { "bakumpai": "banam", "ngaju": "bana" },       "usus": { "bakumpai": "ucus", "ngaju": "bajakah kenai" },
+      "suami": { "bakumpai": "banam", "ngaju": "bana" },
+      "usus": { "bakumpai": "ucus", "ngaju": "bajakah kenai" },
       "hijau": { "bakumpai": "bahijau", "ngaju": "bahijau" },
       "kuning": { "bakumpai": "bahenda", "ngaju": "bahenda" },
       "merah": { "bakumpai": "bahandang", "ngaju": "bahandang" },
       "cantik": { "bakumpai": "bahalap", "ngaju": "bahalap" },
       "bekerja": { "bakumpai": "bagawi", "ngaju": "bagawi" },
-      "saya": { "bakumpai": "yaku", "ngaju": "yaku" }, 
       "awal": { "bakumpai": "awal", "ngaju": "awal" },
       "nama": { "bakumpai": "aran", "ngaju": "aran" },
       "gantung": { "bakumpai": "ampah", "ngaju": "ampeh" },
@@ -275,7 +246,7 @@ ni<!DOCTYPE html>
       "asap": { "bakumpai": "ansep", "ngaju": "asep" },
       "api": { "bakumpai": "apui", "ngaju": "api" },
       "kata": { "bakumpai": "auh", "ngaju": "kata" },
-      "kalau": { "bakumpai": "amun", "ngaju": "kalau" },       
+      "kalau": { "bakumpai": "amun", "ngaju": "kalau" },
       "atau": { "bakumpai": "mun", "ngaju": "atau" },
       "karena": { "bakumpai": "awi", "ngaju": "karena" },
       "untuk": { "bakumpai": "akam", "ngaju": "untuk" },
@@ -287,20 +258,18 @@ ni<!DOCTYPE html>
       "tampang": { "bakumpai": "ampin", "ngaju": "tampang" },
       "tikar": { "bakumpai": "amak", "ngaju": "tikar" },
       "mari": { "bakumpai": "ayu", "ngaju": "mari" },
-      "untuk": { "bakumpai": "akan", "ngaju": "untuk" },
       "banyak": { "bakumpai": "are", "ngaju": "banyak" },
-      "katanya": { "bakumpai": "auheh", "ngaju": "katanya" },      
+      "katanya": { "bakumpai": "auheh", "ngaju": "katanya" },
       "awan": { "bakumpai": "awan", "ngaju": "awan" },
       "perempuan": { "bakumpai": "bawi", "ngaju": "perempuan" },
       "kera": { "bakumpai": "bakei", "ngaju": "kera" },
       "berani": { "bakumpai": "bahanyi", "ngaju": "berani" },
-      "bisa": { "bakumpai": "tau", "ngaju": "bisa" },     
-      "bisa": { "bakumpai": "wisa", "ngaju": "bisa" },
+      "bisa": { "bakumpai": "tau", "ngaju": "bisa" },
       "bersih": { "bakumpai": "balawa", "ngaju": "bersih" },
       "ikat": { "bakumpai": "bahat", "ngaju": "ikat" },
       "kembali": { "bakumpai": "buli", "ngaju": "kembali" },
       "betul": { "bakumpai": "bujur", "ngaju": "betul" },
-      "balas": { "bakumpai": "baleh", "ngaju": "balas" }
+      "balas": { "bakumpai": "baleh", "ngaju": "balas" },
       "tua": { "bakumpai": "bakas", "ngaju": "tua" },
       "bibir": { "bakumpai": "biwih", "ngaju": "bibir" },
       "betis": { "bakumpai": "buntis", "ngaju": "betis" },
@@ -308,8 +277,7 @@ ni<!DOCTYPE html>
       "buaya": { "bakumpai": "buai", "ngaju": "buaya" },
       "rusak": { "bakumpai": "bijat", "ngaju": "rusak" },
       "rajin": { "bakumpai": "bukih", "ngaju": "rajin" }
-      };
-
+    };
         document.getElementById('dark-mode-toggle').addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
